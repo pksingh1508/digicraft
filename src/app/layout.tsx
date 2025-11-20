@@ -1,35 +1,24 @@
 import type { Metadata } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
-const sans = Manrope({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const display = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
+import { fontMontserrat, fontPoppins, fontMono } from "@/fonts";
+import { LenisProvider } from "@/components/lenis-provider";
 
 export const metadata: Metadata = {
   title: "Digicraft Consulting | Digital Product & Growth Partners",
   description:
-    "We build digital experiences, mobile apps, SEO systems, and startup playbooks that compound growth for modern teams.",
+    "We build digital experiences, mobile apps, SEO systems, and startup playbooks that compound growth for modern teams."
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${sans.variable} ${display.variable} antialiased bg-background text-foreground`}
+        className={`${fontMontserrat.variable} ${fontPoppins.variable} antialiased bg-background text-foreground`}
       >
         <ThemeProvider
           attribute="class"
@@ -37,7 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <LenisProvider>{children}</LenisProvider>
         </ThemeProvider>
       </body>
     </html>

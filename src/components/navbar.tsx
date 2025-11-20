@@ -16,7 +16,7 @@ export function Navbar() {
     { href: "#process", label: "Process" },
     { href: "#testimonials", label: "Clients" },
     { href: "/careers", label: "Careers" },
-    { href: "#contact", label: "Contact" },
+    { href: "#contact", label: "Contact" }
   ];
 
   return (
@@ -24,32 +24,37 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60"
+      className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-lg supports-backdrop-filter:bg-background/60"
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/25">
+        <Link
+          href="/"
+          className="flex items-center gap-3 rounded-full border border-gray-200 bg-card/80 px-4 py-2 shadow-sm shadow-primary/10 transition hover:-translate-y-0.5 dark:border-gray-700"
+        >
+          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-primary ring-1 ring-primary/25">
             <Sparkles className="h-5 w-5" />
           </div>
-          <div className="leading-tight">
-            <span className="block font-display text-lg font-semibold tracking-tight">
-              Digicraft Consulting
-            </span>
-            <span className="text-xs text-muted-foreground">Digital product & growth studio</span>
-          </div>
+          <span className="font-display text-lg font-semibold tracking-tight">
+            Digicraft Consulting
+          </span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href} className="transition-colors hover:text-primary">
-              {link.label}
-            </Link>
-          ))}
+
+        <nav className="hidden items-center gap-2 text-sm font-semibold md:flex">
+          <div className="flex items-center gap-1 rounded-full border border-gray-200 bg-card/80 px-3 py-1 shadow-sm shadow-primary/5 dark:border-gray-700">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-full px-3 py-2 text-muted-foreground transition hover:bg-muted hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </nav>
-        <div className="flex items-center gap-2 md:gap-4">
+
+        <div className="flex items-center gap-2 md:gap-3">
           <ThemeToggle />
-          <Button asChild className="hidden md:inline-flex shadow-md shadow-primary/30">
-            <Link href="#contact">Book a call</Link>
-          </Button>
           <button
             aria-label="Toggle menu"
             className="inline-flex items-center justify-center rounded-md p-2 transition md:hidden hover:bg-muted"
@@ -65,7 +70,7 @@ export function Navbar() {
         animate={open ? "open" : "closed"}
         variants={{
           open: { height: "auto", opacity: 1 },
-          closed: { height: 0, opacity: 0 },
+          closed: { height: 0, opacity: 0 }
         }}
         className="mx-auto block max-w-6xl overflow-hidden px-4 md:hidden"
       >
