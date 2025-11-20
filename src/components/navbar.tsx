@@ -15,6 +15,7 @@ export function Navbar() {
     { href: "#showcase", label: "Work" },
     { href: "#process", label: "Process" },
     { href: "#testimonials", label: "Clients" },
+    { href: "/careers", label: "Careers" },
     { href: "#contact", label: "Contact" },
   ];
 

@@ -26,6 +26,7 @@ export function Footer() {
               <li><Link href="#process" className="transition-colors hover:text-primary">How we work</Link></li>
               <li><Link href="#showcase" className="transition-colors hover:text-primary">Case Studies</Link></li>
               <li><Link href="#testimonials" className="transition-colors hover:text-primary">Client Stories</Link></li>
+              <li><Link href="/careers" className="transition-colors hover:text-primary">Careers</Link></li>
               <li><Link href="mailto:hello@digicraft.studio" className="transition-colors hover:text-primary">Contact</Link></li>
             </ul>
           </div>
